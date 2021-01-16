@@ -1,0 +1,72 @@
+[
+    {
+        "id" : 1,
+        "name" : "Ben",
+        "emoji" : "🇺🇸",
+        "score" : -43,
+        "joined" : "06/17"
+    },
+    {
+        "id" : 2,
+        "name" : "Alexandra H",
+        "emoji" : "💥",
+        "score" : -121,
+        "joined" : "06/17"
+    },
+    {
+        "id" : 3,
+        "name" : "Hein",
+        "emoji" : "🇳🇴",
+        "score" : -233,
+        "joined" : "06/17"
+    },
+    {
+        "id" : 4,
+        "name" : "Thea",
+        "emoji" : "🐕",
+        "score" : -251,
+        "joined" : "06/17"
+    },
+    {
+        "id" : 5,
+        "name" : "Wendi",
+        "emoji" : "‍🤞",
+        "score" : -279,
+        "joined" : "06/17"
+    },
+    {
+        "id" : 6,
+        "name" : "Tobbe",
+        "emoji" : "‍🎩",
+        "score" : -321,
+        "joined" : "06/17"
+    },
+    {
+        "id" : 7,
+        "name" : "Olof",
+        "emoji" : "‍🍆",
+        "score" : -765,
+        "joined" : "06/17"
+    },
+    {
+        "id" : 8,
+        "name" : "Henke",
+        "emoji" : "‍👗",
+        "score" : -999,
+        "joined" : "06/17"
+    },
+    {
+        "id" : 9,
+        "name" : "David",
+        "emoji" : "‍🦁",
+        "score" : -1000,
+        "joined" : "06/17"
+    },
+    {
+        "id" : 10,
+        "name" : "Erik",
+        "emoji" : "‍🌭",
+        "score" : -1003,
+        "joined" : "06/17"
+    }
+]
