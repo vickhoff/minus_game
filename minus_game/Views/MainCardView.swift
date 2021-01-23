@@ -10,10 +10,12 @@ import SwiftUI
 struct MainCardView: View {
     
     let user: User
+    @Binding var isShowingDetails: Bool
     
     var body: some View {
-        VStack {
-            HStack {
+        VStack(spacing: 0) {
+            VStack{
+                HStack {
                 HStack(spacing: 16) {
                     Text(user.emoji)
                     Text(user.name)
@@ -38,10 +40,17 @@ struct MainCardView: View {
                     ButtonView(icon: "minus", color: redLight)
                 }
             }
+            
+            }
+            .padding()
+            if isShowingDetails {
+                DetailView(user: user)
+            }
         }
-        .padding()
         .background(Color.white)
         .cornerRadius(16)
+        .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 8)
+        .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
     }
 }
 
@@ -49,8 +58,7 @@ struct MainCardView_Previews: PreviewProvider {
     static let users: [User] = Bundle.main.decode("users.json")
     
     static var previews: some View {
-        MainCardView(user: users[0])
+        MainCardView(user: users[0], isShowingDetails: .constant(true))
             .previewLayout(.sizeThatFits)
-            .padding()
     }
 }

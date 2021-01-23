@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct WorkSans {
-    static let bold = "WorkSans-Bold.ttf"
-    static let medium = "WorkSans-Medium.ttf"
+    static let bold = "WorkSans-Bold"
+    static let medium = "WorkSans-Medium"
 }
 
 //COLORS
@@ -20,7 +20,7 @@ let greenLight: Color = Color("GreenLight")
 let textColor: Color = Color("TextColor")
 
 //FONTS
-let fontTitle1 = Font.custom("WorkSans-Bold.ttf", size: 22)
-let fontTitle2 = Font.custom("WorkSans-Bold.ttf", size: 18)
-let fontRegular = Font.custom(WorkSans.medium, size: 16)
-let fontCaption = Font.custom(WorkSans.medium, size: 14)
+let fontTitle1 = Font.custom("WorkSans-Bold", size: 22)
+let fontTitle2 = Font.custom("WorkSans-Bold", size: 18)
+let fontRegular = Font.custom("WorkSans-Medium", size: 16)
+let fontCaption = Font.custom("WorkSans-Medium", size: 14)
