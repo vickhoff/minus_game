@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		5B000A3B25BC6F6D00B5C567 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B000A3A25BC6F6D00B5C567 /* DetailView.swift */; };
+		5B2A80A625BC906000BB9A9F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B2A80A525BC906000BB9A9F /* GoogleService-Info.plist */; };
 		5B46CDE325B1F6AD00ACDCF3 /* minus_gameApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B46CDE225B1F6AD00ACDCF3 /* minus_gameApp.swift */; };
 		5B46CDE525B1F6AD00ACDCF3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B46CDE425B1F6AD00ACDCF3 /* ContentView.swift */; };
 		5B46CDE725B1F6AF00ACDCF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B46CDE625B1F6AF00ACDCF3 /* Assets.xcassets */; };
@@ -20,10 +21,12 @@
 		5B46CE0C25B1F6F900ACDCF3 /* MainCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B46CE0A25B1F6F900ACDCF3 /* MainCardView.swift */; };
 		5B46CE1225B35F4000ACDCF3 /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B46CE1025B35F4000ACDCF3 /* WorkSans-Medium.ttf */; };
 		5B46CE1325B35F4000ACDCF3 /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B46CE1125B35F4000ACDCF3 /* WorkSans-Bold.ttf */; };
+		F6B1B7962178278D2EF62801 /* Pods_minus_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5BB4E8E942EB5340C32B09 /* Pods_minus_game.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5B000A3A25BC6F6D00B5C567 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		5B2A80A525BC906000BB9A9F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5B46CDDF25B1F6AD00ACDCF3 /* minus_game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = minus_game.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B46CDE225B1F6AD00ACDCF3 /* minus_gameApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = minus_gameApp.swift; sourceTree = "<group>"; };
 		5B46CDE425B1F6AD00ACDCF3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,6 +41,9 @@
 		5B46CE0A25B1F6F900ACDCF3 /* MainCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCardView.swift; sourceTree = "<group>"; };
 		5B46CE1025B35F4000ACDCF3 /* WorkSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Medium.ttf"; sourceTree = "<group>"; };
 		5B46CE1125B35F4000ACDCF3 /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Bold.ttf"; sourceTree = "<group>"; };
+		6C3EDDC96BC9E673CCABDB24 /* Pods-minus_game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minus_game.release.xcconfig"; path = "Target Support Files/Pods-minus_game/Pods-minus_game.release.xcconfig"; sourceTree = "<group>"; };
+		8135762ED3FAF3ABB1558E50 /* Pods-minus_game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minus_game.debug.xcconfig"; path = "Target Support Files/Pods-minus_game/Pods-minus_game.debug.xcconfig"; sourceTree = "<group>"; };
+		EF5BB4E8E942EB5340C32B09 /* Pods_minus_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_minus_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +51,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6B1B7962178278D2EF62801 /* Pods_minus_game.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A2F30D360BDE5B0CDC87860 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8135762ED3FAF3ABB1558E50 /* Pods-minus_game.debug.xcconfig */,
+				6C3EDDC96BC9E673CCABDB24 /* Pods-minus_game.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5B46CDD625B1F6AD00ACDCF3 = {
 			isa = PBXGroup;
 			children = (
 				5B46CDE125B1F6AD00ACDCF3 /* minus_game */,
 				5B46CDE025B1F6AD00ACDCF3 /* Products */,
+				1A2F30D360BDE5B0CDC87860 /* Pods */,
+				70361BE9350E70BE7CC4420B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +98,7 @@
 				5B46CDE425B1F6AD00ACDCF3 /* ContentView.swift */,
 				5B46CDE625B1F6AF00ACDCF3 /* Assets.xcassets */,
 				5B46CDEB25B1F6AF00ACDCF3 /* Info.plist */,
+				5B2A80A525BC906000BB9A9F /* GoogleService-Info.plist */,
 				5B46CDE825B1F6AF00ACDCF3 /* Preview Content */,
 			);
 			path = minus_game;
@@ -144,6 +163,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		70361BE9350E70BE7CC4420B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EF5BB4E8E942EB5340C32B09 /* Pods_minus_game.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,9 +178,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5B46CDEE25B1F6AF00ACDCF3 /* Build configuration list for PBXNativeTarget "minus_game" */;
 			buildPhases = (
+				FEAF6A1F6A23533065E40723 /* [CP] Check Pods Manifest.lock */,
 				5B46CDDB25B1F6AD00ACDCF3 /* Sources */,
 				5B46CDDC25B1F6AD00ACDCF3 /* Frameworks */,
 				5B46CDDD25B1F6AD00ACDCF3 /* Resources */,
+				D57819F6E76C6FCA2E2DA6C1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -206,10 +235,53 @@
 				5B46CDEA25B1F6AF00ACDCF3 /* Preview Assets.xcassets in Resources */,
 				5B46CDE725B1F6AF00ACDCF3 /* Assets.xcassets in Resources */,
 				5B46CE1325B35F4000ACDCF3 /* WorkSans-Bold.ttf in Resources */,
+				5B2A80A625BC906000BB9A9F /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D57819F6E76C6FCA2E2DA6C1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-minus_game/Pods-minus_game-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-minus_game/Pods-minus_game-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-minus_game/Pods-minus_game-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEAF6A1F6A23533065E40723 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-minus_game-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5B46CDDB25B1F6AD00ACDCF3 /* Sources */ = {
@@ -348,6 +420,7 @@
 		};
 		5B46CDEF25B1F6AF00ACDCF3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8135762ED3FAF3ABB1558E50 /* Pods-minus_game.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -360,7 +433,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.designcode.minus-game";
+				PRODUCT_BUNDLE_IDENTIFIER = "dv.minus-game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -369,6 +442,7 @@
 		};
 		5B46CDF025B1F6AF00ACDCF3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C3EDDC96BC9E673CCABDB24 /* Pods-minus_game.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -381,7 +455,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "io.designcode.minus-game";
+				PRODUCT_BUNDLE_IDENTIFIER = "dv.minus-game";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
