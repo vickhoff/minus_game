@@ -79,7 +79,7 @@ struct DetailView: View {
                         }
                         Spacer()
                         ForEach(user.meta, id: \.self) { meta in
-                            Text("\(meta.aboveZero ?? 0) \(meta.aboveZero ?? 0 > 1 ? "days" : "day")")
+                            Text("\(meta.aboveZero ?? 0) \((meta.aboveZero ?? 0 > 1 || meta.aboveZero ?? 0 == 0) ? "days" : "day")")
                                 .font(fontTitle2)
                         }
                         
@@ -96,7 +96,7 @@ struct DetailView: View {
                         }
                         Spacer()
                         ForEach(user.meta, id: \.self) { meta in
-                            Text("\(meta.belowZero ?? 0) \(meta.belowZero ?? 0 > 1 ? "days" : "day")")
+                            Text("\(meta.belowZero ?? 0) \((meta.belowZero ?? 0 > 1 || meta.belowZero ?? 0 == 0) ? "days" : "day")")
                                 .font(fontTitle2)
                         }
                         
@@ -131,11 +131,13 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static let user = UserModel(
+        userID: "",
         name: "Hein",
         emoji: "🇳🇴",
         score: -230,
         joined: "08/20",
         meta: [MetaModel(
+            metaID: "",
             highest: 5,
             lowest: -120,
             avgPrWeek: -0.43,

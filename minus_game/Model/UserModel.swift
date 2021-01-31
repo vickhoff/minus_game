@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UserModel: Codable, Hashable {
     var id = UUID()
+    var userID: String
     var name: String
     var emoji: String
     var score: Int
@@ -19,6 +20,7 @@ struct UserModel: Codable, Hashable {
 
 struct MetaModel: Codable, Hashable {
     var id = UUID()
+    var metaID: String
     var highest: Int
     var lowest: Int
     var avgPrWeek: Double
