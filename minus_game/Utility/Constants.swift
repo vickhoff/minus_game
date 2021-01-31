@@ -18,6 +18,8 @@ let yellowLDark: Color = Color("YellowDark")
 let redLight: Color = Color("RedLight")
 let greenLight: Color = Color("GreenLight")
 let textColor: Color = Color("TextColor")
+let mainBackground: Color = Color("MainBackground")
+let cardBackground: Color = Color("CardBackground")
 
 //FONTS
 let fontTitle1 = Font.custom("WorkSans-Bold", size: 22)

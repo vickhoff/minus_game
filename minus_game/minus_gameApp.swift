@@ -15,7 +15,7 @@ struct minus_gameApp: App {
     }
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(users: UserArrayObject())
         }
     }
 }

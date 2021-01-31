@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainCardView: View {
     
-    let user: User
+    @State var user: UserModel
     @Binding var isShowingDetails: Bool
     
     var body: some View {
@@ -47,7 +47,7 @@ struct MainCardView: View {
                 DetailView(user: user)
             }
         }
-        .background(Color.white)
+        .background(cardBackground)
         .cornerRadius(16)
         .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 8)
         .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
@@ -55,10 +55,11 @@ struct MainCardView: View {
 }
 
 struct MainCardView_Previews: PreviewProvider {
-    static let users: [User] = Bundle.main.decode("users.json")
+    static let user = UserModel(name: "Hein", emoji: "🇳🇴", score: -122, joined: "06/17", meta: [MetaModel(highest: 5, lowest: -133, avgPrWeek: -0.66, aboveZero: 6, belowZero: 44)])
     
     static var previews: some View {
-        MainCardView(user: users[0], isShowingDetails: .constant(true))
+        MainCardView(user: user, isShowingDetails: .constant(true))
+            .preferredColorScheme(.dark)
             .previewLayout(.sizeThatFits)
     }
 }

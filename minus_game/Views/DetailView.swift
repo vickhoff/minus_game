@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailView: View {
-    let user: User
+    let user: UserModel
     @State private var showingAlert = false
     
     var body: some View {
@@ -27,8 +27,10 @@ struct DetailView: View {
                                 .font(fontRegular)
                         }
                         Spacer()
-                        Text("+11")
-                            .font(fontTitle2)
+                        ForEach(user.meta, id: \.self) { meta in
+                            Text("\(meta.highest)")
+                                .font(fontTitle2)
+                        }
                         
                     }
                     
@@ -42,8 +44,10 @@ struct DetailView: View {
                                 .font(fontRegular)
                         }
                         Spacer()
-                        Text("-999")
-                            .font(fontTitle2)
+                        ForEach(user.meta, id: \.self) { meta in
+                            Text("\(meta.lowest)")
+                                .font(fontTitle2)
+                        }
                         
                     }
                     
@@ -57,8 +61,10 @@ struct DetailView: View {
                                 .font(fontRegular)
                         }
                         Spacer()
-                        Text("-0,66")
-                            .font(fontTitle2)
+                        ForEach(user.meta, id: \.self) { meta in
+                            Text("\(meta.avgPrWeek)")
+                                .font(fontTitle2)
+                        }
                         
                     }
                     
@@ -72,8 +78,10 @@ struct DetailView: View {
                                 .font(fontRegular)
                         }
                         Spacer()
-                        Text("6 days")
-                            .font(fontTitle2)
+                        ForEach(user.meta, id: \.self) { meta in
+                            Text("\(meta.aboveZero ?? 0) \(meta.aboveZero ?? 0 > 1 ? "days" : "day")")
+                                .font(fontTitle2)
+                        }
                         
                     }
                     
@@ -87,8 +95,10 @@ struct DetailView: View {
                                 .font(fontRegular)
                         }
                         Spacer()
-                        Text("452 days")
-                            .font(fontTitle2)
+                        ForEach(user.meta, id: \.self) { meta in
+                            Text("\(meta.belowZero ?? 0) \(meta.belowZero ?? 0 > 1 ? "days" : "day")")
+                                .font(fontTitle2)
+                        }
                         
                     }
                 }
@@ -120,10 +130,22 @@ struct DetailView: View {
 
 
 struct DetailView_Previews: PreviewProvider {
-    static let users: [User] = Bundle.main.decode("users.json")
+    static let user = UserModel(
+        name: "Hein",
+        emoji: "🇳🇴",
+        score: -230,
+        joined: "08/20",
+        meta: [MetaModel(
+            highest: 5,
+            lowest: -120,
+            avgPrWeek: -0.43,
+            aboveZero: 1,
+            belowZero: 46
+        )]
+    )
     
     static var previews: some View {
-        DetailView(user:users[0])
+        DetailView(user: user)
             .previewLayout(.sizeThatFits)
         //.padding()
     }

@@ -12,9 +12,13 @@ import SwiftUI
 struct ButtonView: View {
     var icon: String
     var color: Color
+    var haptic = UIImpactFeedbackGenerator(style: .rigid)
     
     var body: some View {
-        Button(action:{}, label: {
+        Button(action:{
+
+                haptic.impactOccurred()
+        }, label: {
             Image(icon)
                 
                 

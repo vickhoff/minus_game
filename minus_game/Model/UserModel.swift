@@ -7,10 +7,25 @@
 
 import SwiftUI
 
-struct User: Codable, Identifiable {
-    let id: Int
-    let name: String
-    let emoji: String
-    let score: Int
-    let joined: String
+struct UserModel: Codable, Hashable {
+    var id = UUID()
+    var name: String
+    var emoji: String
+    var score: Int
+    var joined: String
+    var meta: [MetaModel]
+
+}
+
+struct MetaModel: Codable, Hashable {
+    var id = UUID()
+    var highest: Int
+    var lowest: Int
+    var avgPrWeek: Double
+    var aboveZero: Int?
+    var belowZero: Int?
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }

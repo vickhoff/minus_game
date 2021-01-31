@@ -21,6 +21,7 @@
 		5B46CE0C25B1F6F900ACDCF3 /* MainCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B46CE0A25B1F6F900ACDCF3 /* MainCardView.swift */; };
 		5B46CE1225B35F4000ACDCF3 /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B46CE1025B35F4000ACDCF3 /* WorkSans-Medium.ttf */; };
 		5B46CE1325B35F4000ACDCF3 /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B46CE1125B35F4000ACDCF3 /* WorkSans-Bold.ttf */; };
+		5B48E9C625C6B223003A30BD /* UserArrayObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48E9C525C6B223003A30BD /* UserArrayObject.swift */; };
 		F6B1B7962178278D2EF62801 /* Pods_minus_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5BB4E8E942EB5340C32B09 /* Pods_minus_game.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		5B46CE0A25B1F6F900ACDCF3 /* MainCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCardView.swift; sourceTree = "<group>"; };
 		5B46CE1025B35F4000ACDCF3 /* WorkSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Medium.ttf"; sourceTree = "<group>"; };
 		5B46CE1125B35F4000ACDCF3 /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Bold.ttf"; sourceTree = "<group>"; };
+		5B48E9C525C6B223003A30BD /* UserArrayObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserArrayObject.swift; sourceTree = "<group>"; };
 		6C3EDDC96BC9E673CCABDB24 /* Pods-minus_game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minus_game.release.xcconfig"; path = "Target Support Files/Pods-minus_game/Pods-minus_game.release.xcconfig"; sourceTree = "<group>"; };
 		8135762ED3FAF3ABB1558E50 /* Pods-minus_game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minus_game.debug.xcconfig"; path = "Target Support Files/Pods-minus_game/Pods-minus_game.debug.xcconfig"; sourceTree = "<group>"; };
 		EF5BB4E8E942EB5340C32B09 /* Pods_minus_game.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_minus_game.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				5B46CDF725B1F6DA00ACDCF3 /* UserModel.swift */,
+				5B48E9C525C6B223003A30BD /* UserArrayObject.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				5B46CDE525B1F6AD00ACDCF3 /* ContentView.swift in Sources */,
 				5B46CDF825B1F6DA00ACDCF3 /* UserModel.swift in Sources */,
 				5B46CE0C25B1F6F900ACDCF3 /* MainCardView.swift in Sources */,
+				5B48E9C625C6B223003A30BD /* UserArrayObject.swift in Sources */,
 				5B46CDE325B1F6AD00ACDCF3 /* minus_gameApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -426,6 +430,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"minus_game/Preview Content\"";
+				DEVELOPMENT_TEAM = UP9DDZ5W94;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = minus_game/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -448,6 +453,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"minus_game/Preview Content\"";
+				DEVELOPMENT_TEAM = UP9DDZ5W94;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = minus_game/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
