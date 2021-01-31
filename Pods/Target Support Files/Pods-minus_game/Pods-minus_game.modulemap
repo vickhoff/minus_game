@@ -1,0 +1,6 @@
+framework module Pods_minus_game {
+  umbrella header "Pods-minus_game-umbrella.h"
+
+  export *
+  module * { export * }
+}
