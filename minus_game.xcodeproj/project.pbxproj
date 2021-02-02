@@ -21,6 +21,7 @@
 		5B46CE0C25B1F6F900ACDCF3 /* MainCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B46CE0A25B1F6F900ACDCF3 /* MainCardView.swift */; };
 		5B46CE1225B35F4000ACDCF3 /* WorkSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B46CE1025B35F4000ACDCF3 /* WorkSans-Medium.ttf */; };
 		5B46CE1325B35F4000ACDCF3 /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B46CE1125B35F4000ACDCF3 /* WorkSans-Bold.ttf */; };
+		5B48205525C8B58B006625B4 /* testscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48205425C8B58B006625B4 /* testscreen.swift */; };
 		5B48E9C625C6B223003A30BD /* UserArrayObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B48E9C525C6B223003A30BD /* UserArrayObject.swift */; };
 		F6B1B7962178278D2EF62801 /* Pods_minus_game.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF5BB4E8E942EB5340C32B09 /* Pods_minus_game.framework */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		5B46CE0A25B1F6F900ACDCF3 /* MainCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCardView.swift; sourceTree = "<group>"; };
 		5B46CE1025B35F4000ACDCF3 /* WorkSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Medium.ttf"; sourceTree = "<group>"; };
 		5B46CE1125B35F4000ACDCF3 /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Bold.ttf"; sourceTree = "<group>"; };
+		5B48205425C8B58B006625B4 /* testscreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testscreen.swift; sourceTree = "<group>"; };
 		5B48E9C525C6B223003A30BD /* UserArrayObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserArrayObject.swift; sourceTree = "<group>"; };
 		6C3EDDC96BC9E673CCABDB24 /* Pods-minus_game.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minus_game.release.xcconfig"; path = "Target Support Files/Pods-minus_game/Pods-minus_game.release.xcconfig"; sourceTree = "<group>"; };
 		8135762ED3FAF3ABB1558E50 /* Pods-minus_game.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-minus_game.debug.xcconfig"; path = "Target Support Files/Pods-minus_game/Pods-minus_game.debug.xcconfig"; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				5B46CDEB25B1F6AF00ACDCF3 /* Info.plist */,
 				5B2A80A525BC906000BB9A9F /* GoogleService-Info.plist */,
 				5B46CDE825B1F6AF00ACDCF3 /* Preview Content */,
+				5B48205425C8B58B006625B4 /* testscreen.swift */,
 			);
 			path = minus_game;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B46CE0625B1F6F300ACDCF3 /* Constants.swift in Sources */,
+				5B48205525C8B58B006625B4 /* testscreen.swift in Sources */,
 				5B000A3B25BC6F6D00B5C567 /* DetailView.swift in Sources */,
 				5B46CDFC25B1F6E400ACDCF3 /* CodableBundleExtension.swift in Sources */,
 				5B46CE0B25B1F6F900ACDCF3 /* ButtonView.swift in Sources */,

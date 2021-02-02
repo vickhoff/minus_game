@@ -27,10 +27,8 @@ struct DetailView: View {
                                 .font(fontRegular)
                         }
                         Spacer()
-                        ForEach(user.meta, id: \.self) { meta in
-                            Text("\(meta.highest)")
+                        Text("\(user.meta.highest)")
                                 .font(fontTitle2)
-                        }
                         
                     }
                     
@@ -44,10 +42,8 @@ struct DetailView: View {
                                 .font(fontRegular)
                         }
                         Spacer()
-                        ForEach(user.meta, id: \.self) { meta in
-                            Text("\(meta.lowest)")
+                        Text("\(user.meta.lowest)")
                                 .font(fontTitle2)
-                        }
                         
                     }
                     
@@ -61,10 +57,8 @@ struct DetailView: View {
                                 .font(fontRegular)
                         }
                         Spacer()
-                        ForEach(user.meta, id: \.self) { meta in
-                            Text("\(meta.avgPrWeek)")
+                        Text("\(user.meta.avgPrWeek)")
                                 .font(fontTitle2)
-                        }
                         
                     }
                     
@@ -78,10 +72,8 @@ struct DetailView: View {
                                 .font(fontRegular)
                         }
                         Spacer()
-                        ForEach(user.meta, id: \.self) { meta in
-                            Text("\(meta.aboveZero ?? 0) \((meta.aboveZero ?? 0 > 1 || meta.aboveZero ?? 0 == 0) ? "days" : "day")")
+                        Text("\(user.meta.aboveZero ?? 0) \((user.meta.aboveZero ?? 0 > 1 || user.meta.aboveZero ?? 0 == 0) ? "days" : "day")")
                                 .font(fontTitle2)
-                        }
                         
                     }
                     
@@ -95,10 +87,8 @@ struct DetailView: View {
                                 .font(fontRegular)
                         }
                         Spacer()
-                        ForEach(user.meta, id: \.self) { meta in
-                            Text("\(meta.belowZero ?? 0) \((meta.belowZero ?? 0 > 1 || meta.belowZero ?? 0 == 0) ? "days" : "day")")
+                        Text("\(user.meta.belowZero ?? 0) \((user.meta.belowZero ?? 0 > 1 || user.meta.belowZero ?? 0 == 0) ? "days" : "day")")
                                 .font(fontTitle2)
-                        }
                         
                     }
                 }
@@ -131,19 +121,21 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static let user = UserModel(
+        id: "2",
         userID: "",
         name: "Hein",
         emoji: "🇳🇴",
         score: -230,
         joined: "08/20",
-        meta: [MetaModel(
+        meta: MetaModel(
+            id: "",
             metaID: "",
             highest: 5,
             lowest: -120,
             avgPrWeek: -0.43,
-            aboveZero: 1,
+            aboveZero: 0,
             belowZero: 46
-        )]
+        )
     )
     
     static var previews: some View {

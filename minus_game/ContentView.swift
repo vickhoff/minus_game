@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseDatabase
+
+
 
 struct ContentView: View {
     @State var users: UserArrayObject
-    @State var isShowingDetails = false
-    @State var isExpanded: [Bool] = [false, false, false, false, false, false, false, false, false, false]
+    
+    var ref: DatabaseReference! = Database.database().reference()
     
     var body: some View {
         ZStack {
@@ -18,21 +22,17 @@ struct ContentView: View {
                 .ignoresSafeArea(.all)
             ScrollView {
                 VStack(spacing: 16) {
-                    ForEach(users.dataArray.indices, id: \.self) { index in
-
-
-                        MainCardView(user: users.dataArray[index], isShowingDetails: $isExpanded[index])
+                    ForEach(users.dataArray, id: \.self) { user in
+                        MainCardView(user: user)
                             .onTapGesture {
-                                for i in isExpanded.indices {
-                                    isExpanded[i] = false
-                                }
-                                isExpanded[index] = true
+                                self.ref.child("users").child(user.id).setValue(["name": user.name])
                             }
-                            .animation(.spring(response: 0.4, dampingFraction: 0.8, blendDuration: 0))
-
                     }
+                    
+                    
                 }
                 .padding(.horizontal, 16)
+                
             }
         }
     }

@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct UserModel: Codable, Hashable {
-    var id = UUID()
+    var id: String
     var userID: String
     var name: String
     var emoji: String
     var score: Int
     var joined: String
-    var meta: [MetaModel]
+    var meta: MetaModel
 
 }
 
 struct MetaModel: Codable, Hashable {
-    var id = UUID()
+    var id: String
     var metaID: String
     var highest: Int
     var lowest: Int

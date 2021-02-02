@@ -7,5 +7,6 @@ target 'minus_game' do
 
   # Pods for minus_game
 pod 'Firebase/Core'
+pod 'Firebase/Database'
 
 end
