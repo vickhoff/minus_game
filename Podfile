@@ -6,7 +6,7 @@ target 'minus_game' do
   use_frameworks!
 
   # Pods for minus_game
-pod 'Firebase/Core'
-pod 'Firebase/Database'
+pod 'Firebase/Firestore'
+pod 'FirebaseFirestoreSwift'
 
 end

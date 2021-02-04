@@ -7,11 +7,13 @@
 
 import SwiftUI
 import Firebase
-import FirebaseDatabase
+import FirebaseFirestoreSwift
+import FirebaseFirestore
 
 struct MainCardView: View {
-    
-    var ref: DatabaseReference! = Database.database().reference()
+    @ObservedObject var viewModel = UsersViewModel()
+    var db = Firestore.firestore()
+
     
     @State var user: UserModel
     @State var animateScore = false
@@ -48,7 +50,7 @@ struct MainCardView: View {
                         
                         //MARK: BUTTON +
                         Button(action:{
-                            givePlus()
+                            viewModel.givePlus(user: self.user)
                             haptic.impactOccurred()
                         }, label: {
                             Image("plus")
@@ -61,7 +63,6 @@ struct MainCardView: View {
                         
                         //MARK: BUTTON -
                         Button(action:{
-                            giveMinus()
                             haptic.impactOccurred()
                         }, label: {
                             Image("minus")
@@ -80,7 +81,7 @@ struct MainCardView: View {
                 self.isShowingDetails.toggle()
             }
             if isShowingDetails {
-                DetailView(user: user)
+                //DetailView(user: user)
             }
         }
         .background(cardBackground)
@@ -88,12 +89,11 @@ struct MainCardView: View {
         .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 8)
         .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
         .animation(.spring(response: 0.4, dampingFraction: 0.8, blendDuration: 0))
-    }
+        
+        }
+        
     
     //MARK: FUNCTIONS
-    func givePlus(){
-        self.ref.child("users/\(user.id)/score").setValue(user.score + 1)
-    }
     /*func givePlus() {
         // Update local data
         let updatedUser = UserModel(userID: user.userID, name: user.name, emoji: user.emoji, score: user.score + 1, joined: user.joined, meta: MetaModel(metaID: user.meta.metaID, highest: user.meta.highest, lowest: user.meta.lowest, avgPrWeek: user.meta.avgPrWeek))
@@ -105,39 +105,19 @@ struct MainCardView: View {
         }
         
     }*/
+
+   
     
-    func giveMinus() {
-        // Update local data
-        let updatedUser = UserModel(id: user.id, userID: user.userID, name: user.name, emoji: user.emoji, score: user.score - 1, joined: user.joined, meta: MetaModel(id: user.meta.id, metaID: user.meta.metaID, highest: user.meta.highest, lowest: user.meta.lowest, avgPrWeek: user.meta.avgPrWeek))
-        self.user = updatedUser
-        
-        animateScore = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            animateScore = false
-        }
-        
-        
-        
-    }
 }
 
 struct MainCardView_Previews: PreviewProvider {
     static let user = UserModel(
         id: "",
-        userID: "",
         name: "Hein",
         emoji: "🇳🇴",
         score: -122,
-        joined: "06/17",
-        meta: MetaModel(
-            id: "",
-            metaID: "",
-            highest: 5,
-            lowest: -133,
-            avgPrWeek: -0.66,
-            aboveZero: 1,
-            belowZero: 44
-        ))
+        joined: "06/17"
+)
     static var previews: some View {
         MainCardView(user: user)
             .preferredColorScheme(.light)

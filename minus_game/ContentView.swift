@@ -7,14 +7,15 @@
 
 import SwiftUI
 import Firebase
-import FirebaseDatabase
+import FirebaseFirestoreSwift
+import FirebaseFirestore
+
 
 
 
 struct ContentView: View {
-    @State var users: UserArrayObject
+    @ObservedObject var viewModel = UsersViewModel()
     
-    var ref: DatabaseReference! = Database.database().reference()
     
     var body: some View {
         ZStack {
@@ -22,11 +23,11 @@ struct ContentView: View {
                 .ignoresSafeArea(.all)
             ScrollView {
                 VStack(spacing: 16) {
-                    ForEach(users.dataArray, id: \.self) { user in
+                    ForEach(viewModel.users, id: \.self) { user in
                         MainCardView(user: user)
                             .onTapGesture {
-                                self.ref.child("users").child(user.id).setValue(["name": user.name])
                             }
+                           
                     }
                     
                     
@@ -35,12 +36,24 @@ struct ContentView: View {
                 
             }
         }
+        .onAppear() {
+                self.viewModel.fetchData()
+              }
     }
+    
+
 }
 
 struct ContentView_Previews: PreviewProvider {
+    static let userFake = UserModel(
+        id: "",
+        name: "Hein",
+        emoji: "🇳🇴",
+        score: -122,
+        joined: "06/17"
+)
     static var previews: some View {
-        ContentView(users: UserArrayObject())
+        ContentView()
             .preferredColorScheme(.light)
     }
 }

@@ -6,15 +6,18 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseFirestoreSwift
+import FirebaseFirestore
 
 struct UserModel: Codable, Hashable {
-    var id: String
-    var userID: String
+    @DocumentID var id: String? =  UUID().uuidString
+    //var userID: String
     var name: String
     var emoji: String
     var score: Int
     var joined: String
-    var meta: MetaModel
+    //var meta: MetaModel
 
 }
 

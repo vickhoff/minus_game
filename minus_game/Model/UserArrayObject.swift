@@ -7,7 +7,7 @@
 
 import Foundation
 
-class UserArrayObject: ObservableObject {
+/*class UserArrayObject: ObservableObject {
     @Published var dataArray = [UserModel]()
     
     init() {
@@ -86,4 +86,4 @@ class UserArrayObject: ObservableObject {
 
     }
     
-}
+}*/

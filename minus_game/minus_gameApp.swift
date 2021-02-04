@@ -10,12 +10,13 @@ import Firebase
 
 @main
 struct minus_gameApp: App {
+
     init(){
         FirebaseApp.configure()
     }
     var body: some Scene {
         WindowGroup {
-            ContentView(users: UserArrayObject())
+            ContentView()
         }
     }
 }

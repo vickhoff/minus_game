@@ -12,7 +12,8 @@ struct DetailView: View {
     @State private var showingAlert = false
     
     var body: some View {
-        
+        Text("hej")
+ /*
         VStack(spacing: 16) {
             Divider()
             VStack(spacing: 32) {
@@ -114,7 +115,9 @@ struct DetailView: View {
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
         }
+         */
     }
+
     
 }
 
@@ -122,20 +125,10 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static let user = UserModel(
         id: "2",
-        userID: "",
         name: "Hein",
         emoji: "🇳🇴",
         score: -230,
-        joined: "08/20",
-        meta: MetaModel(
-            id: "",
-            metaID: "",
-            highest: 5,
-            lowest: -120,
-            avgPrWeek: -0.43,
-            aboveZero: 0,
-            belowZero: 46
-        )
+        joined: "08/20"
     )
     
     static var previews: some View {
