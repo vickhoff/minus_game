@@ -12,10 +12,11 @@ import FirebaseFirestore
 
 class UsersViewModel: ObservableObject {
     @Published var users = [UserModel]()
+
     
     private var db = Firestore.firestore()
     
-    func fetchData() {
+    init() {
         db.collection("users").addSnapshotListener { (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
                 print("No documents")
@@ -24,26 +25,75 @@ class UsersViewModel: ObservableObject {
             
             self.users = documents.map { queryDocumentSnapshot -> UserModel in
                 let data = queryDocumentSnapshot.data()
+                let userID = queryDocumentSnapshot.documentID
                 let name = data["name"] as? String ?? ""
                 let emoji = data["emoji"] as? String ?? ""
                 let score = data["score"] as? Int ?? 0
                 let joined = data["joined"] as? String ?? ""
-                
-                return UserModel(id: .init(), name: name, emoji: emoji, score: score, joined: joined)
+                let highest = data["highest"] as? Int ?? 0
+                let lowest = data["lowest"] as? Int ?? 0
+                let avgPrWeek = data["avgPrWeek"] as? Double ?? 0
+                let aboveZero = data["aboveZero"] as? Int ?? 0
+                let belowZero = data["belowZero"] as? Int ?? 0
+
+                return UserModel(id: .init(), userID: userID, name: name, emoji: emoji, score: score, joined: joined, highest: highest, lowest: lowest, avgPrWeek: avgPrWeek,aboveZero: aboveZero , belowZero: belowZero)
             }
         }
+        
     }
     
     func givePlus(user: UserModel) {
-        let userRef = db.collection("users").document(user.id)
-
+        let userRef = db.collection("users").document(user.userID)
+        
+        //Give Plus
         userRef.updateData([
             "score": user.score + 1
         ]) { err in
             if let err = err {
-                print("Error updating document: \(err)")
+                print("Plus point given: \(err)")
             } else {
-                print("Document successfully updated")
+                print("Plus point succeeded")
+            }
+        }
+        
+        //Update Highest
+        if user.highest == user.score {
+            userRef.updateData([
+                "highest": user.highest + 1
+            ]) { err in
+                if let err = err {
+                    print("Lowest failed to update: \(err)")
+                } else {
+                    print("Lowest updated")
+                }
+            }
+        }
+    }
+    
+    func giveMinus(user: UserModel) {
+        let userRef = db.collection("users").document(user.userID)
+        
+        //Give minus
+        userRef.updateData([
+            "score": user.score - 1
+        ]) { err in
+            if let err = err {
+                print("Minus point failed: \(err)")
+            } else {
+                print("Minus point succeeded")
+            }
+        }
+        
+        //Update Lowest
+        if user.lowest == user.score {
+            userRef.updateData([
+                "lowest": user.lowest - 1
+            ]) { err in
+                if let err = err {
+                    print("Lowest failed to update: \(err)")
+                } else {
+                    print("Lowest updated")
+                }
             }
         }
     }

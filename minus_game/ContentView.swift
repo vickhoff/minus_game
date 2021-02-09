@@ -14,7 +14,9 @@ import FirebaseFirestore
 
 
 struct ContentView: View {
-    @ObservedObject var viewModel = UsersViewModel()
+    @StateObject var viewModel = UsersViewModel()
+    
+
     
     
     var body: some View {
@@ -25,35 +27,49 @@ struct ContentView: View {
                 VStack(spacing: 16) {
                     ForEach(viewModel.users, id: \.self) { user in
                         MainCardView(user: user)
-                            .onTapGesture {
-                            }
-                           
                     }
-                    
                     
                 }
                 .padding(.horizontal, 16)
                 
             }
         }
-        .onAppear() {
-                self.viewModel.fetchData()
-              }
+
     }
     
-
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static let userFake = UserModel(
-        id: "",
-        name: "Hein",
-        emoji: "🇳🇴",
-        score: -122,
-        joined: "06/17"
-)
+//    static let userTest: [UsersViewModel] = [
+//        UserModel(
+//            id: "0",
+//            name: "Ben",
+//            emoji: "🇺🇸",
+//            score: -43,
+//            joined: "06/17",
+//            highest: 11,
+//            lowest: -999,
+//            avgPrWeek: -0.66,
+//            aboveZero: 6,
+//            belowZero: 452
+//        ),
+//        UserModel(
+//            id: "1",
+//            name: "Ben",
+//            emoji: "🇺🇸",
+//            score: -43,
+//            joined: "06/17",
+//            highest: 11,
+//            lowest: -999,
+//            avgPrWeek: -0.66,
+//            aboveZero: 6,
+//            belowZero: 452
+//        )
+//    ]
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: UsersViewModel())
             .preferredColorScheme(.light)
+            
     }
 }

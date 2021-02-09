@@ -6,14 +6,17 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseFirestoreSwift
+import FirebaseFirestore
 
 struct DetailView: View {
     let user: UserModel
     @State private var showingAlert = false
+    @ObservedObject var viewModel = UsersViewModel()
     
     var body: some View {
-        Text("hej")
- /*
+ 
         VStack(spacing: 16) {
             Divider()
             VStack(spacing: 32) {
@@ -28,7 +31,7 @@ struct DetailView: View {
                                 .font(fontRegular)
                         }
                         Spacer()
-                        Text("\(user.meta.highest)")
+                        Text("\(user.highest)")
                                 .font(fontTitle2)
                         
                     }
@@ -43,7 +46,7 @@ struct DetailView: View {
                                 .font(fontRegular)
                         }
                         Spacer()
-                        Text("\(user.meta.lowest)")
+                        Text("\(user.lowest)")
                                 .font(fontTitle2)
                         
                     }
@@ -58,7 +61,7 @@ struct DetailView: View {
                                 .font(fontRegular)
                         }
                         Spacer()
-                        Text("\(user.meta.avgPrWeek)")
+                        Text("\(user.avgPrWeek)")
                                 .font(fontTitle2)
                         
                     }
@@ -73,7 +76,7 @@ struct DetailView: View {
                                 .font(fontRegular)
                         }
                         Spacer()
-                        Text("\(user.meta.aboveZero ?? 0) \((user.meta.aboveZero ?? 0 > 1 || user.meta.aboveZero ?? 0 == 0) ? "days" : "day")")
+                        Text("\(user.aboveZero ?? 0) \((user.aboveZero ?? 0 > 1 || user.aboveZero ?? 0 == 0) ? "days" : "day")")
                                 .font(fontTitle2)
                         
                     }
@@ -88,7 +91,7 @@ struct DetailView: View {
                                 .font(fontRegular)
                         }
                         Spacer()
-                        Text("\(user.meta.belowZero ?? 0) \((user.meta.belowZero ?? 0 > 1 || user.meta.belowZero ?? 0 == 0) ? "days" : "day")")
+                        Text("\(user.belowZero ?? 0) \((user.belowZero ?? 0 > 1 || user.belowZero ?? 0 == 0) ? "days" : "day")")
                                 .font(fontTitle2)
                         
                     }
@@ -115,7 +118,6 @@ struct DetailView: View {
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
         }
-         */
     }
 
     
@@ -124,11 +126,17 @@ struct DetailView: View {
 
 struct DetailView_Previews: PreviewProvider {
     static let user = UserModel(
-        id: "2",
-        name: "Hein",
-        emoji: "🇳🇴",
-        score: -230,
-        joined: "08/20"
+        id: "0",
+        userID: "",
+        name: "Ben",
+        emoji: "🇺🇸",
+        score: -43,
+        joined: "06/17",
+        highest: 11,
+        lowest: -999,
+        avgPrWeek: -0.66,
+        aboveZero: 6,
+        belowZero: 452
     )
     
     static var previews: some View {

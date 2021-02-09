@@ -10,6 +10,7 @@ import Firebase
 
 @main
 struct minus_gameApp: App {
+    @StateObject var viewModel = UsersViewModel()
 
     init(){
         FirebaseApp.configure()
@@ -17,6 +18,7 @@ struct minus_gameApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(viewModel)
         }
     }
 }
