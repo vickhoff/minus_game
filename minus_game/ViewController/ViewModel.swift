@@ -17,11 +17,12 @@ class UsersViewModel: ObservableObject {
     private var db = Firestore.firestore()
     
     init() {
-        db.collection("users").addSnapshotListener { (querySnapshot, error) in
+        db.collection("users").order(by: "score", descending: true).addSnapshotListener { (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
                 print("No documents")
                 return
             }
+            
             
             self.users = documents.map { queryDocumentSnapshot -> UserModel in
                 let data = queryDocumentSnapshot.data()

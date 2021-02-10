@@ -15,7 +15,7 @@ struct MainCardView: View {
     
     @State var user: UserModel
     @State var animateScore = false
-    @State var isShowingDetails: Bool = false
+    @Binding var isShowingDetails: Bool
     var haptic = UIImpactFeedbackGenerator(style: .medium)
     
     var body: some View {
@@ -35,9 +35,7 @@ struct MainCardView: View {
                             .font(fontCaption)
                     
                 }
-                .onTapGesture {
-                    self.isShowingDetails.toggle()
-                }
+
                 HStack {
                     Text("joined \(user.joined)")
                         .font(fontCaption)
@@ -84,7 +82,6 @@ struct MainCardView: View {
         .cornerRadius(16)
         .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0, y: 8)
         .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
-        .animation(.spring(response: 0.4, dampingFraction: 0.8, blendDuration: 0))
         
         }
         
@@ -116,7 +113,7 @@ struct MainCardView_Previews: PreviewProvider {
         belowZero: 452
 )
     static var previews: some View {
-        MainCardView(user: user)
+        MainCardView(user: user, isShowingDetails: .constant(false))
             .preferredColorScheme(.light)
             .previewLayout(.sizeThatFits)
     }

@@ -21,6 +21,8 @@ struct DetailView: View {
             Divider()
             VStack(spacing: 32) {
                 VStack(spacing: 16) {
+                    
+                    
                     HStack {
                         HStack {
                             Circle()
@@ -119,6 +121,7 @@ struct DetailView: View {
             .padding(.bottom, 16)
         }
     }
+
 
     
 }
