@@ -17,8 +17,8 @@ struct ContentView: View {
     @StateObject var viewModel = UsersViewModel()
     @State private var isShowingDetails: Bool = false
     var scores = [Int]()
-
-
+    
+    
     
     
     var body: some View {
@@ -38,24 +38,41 @@ struct ContentView: View {
                     
                 }
                 .padding(.horizontal, 16)
-
+                
                 
             }
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        viewModel.addUser()
+                    }, label: {
+                        Image(systemName: "plus")
+                            .foregroundColor(cardBackground)
+                    })
+                    .frame(width: 56, height: 56)
+                    .background(Circle())
+                    .padding(.horizontal, 24)
+                    
+                }
+            }
+            
         }
-
+        
     }
     
-
+    
     
     
     
 }
 
 struct ContentView_Previews: PreviewProvider {
-
+    
     static var previews: some View {
         ContentView(viewModel: UsersViewModel())
             .preferredColorScheme(.light)
-            
+        
     }
 }

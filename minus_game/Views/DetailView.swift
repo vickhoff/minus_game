@@ -112,7 +112,9 @@ struct DetailView: View {
                 .background(redLight)
                 .cornerRadius(8)
                 .alert(isPresented:$showingAlert) {
-                    Alert(title: Text("Är du säker på att du vill ta bort \(user.name)?"), message: Text("Hen kommer flyttas till steg 2"), primaryButton: .destructive(Text("Ta bort jäveln")), secondaryButton: .cancel(Text("Nah")))
+                    Alert(title: Text("Är du säker på att du vill ta bort \(user.name)?"), message: Text("Hen kommer flyttas till steg 2"), primaryButton: .destructive(Text("Ta bort jäveln"), action: {
+                        viewModel.deleteUser(user: self.user)
+                    }), secondaryButton: .cancel(Text("Nah")))
                 }
                 
                 

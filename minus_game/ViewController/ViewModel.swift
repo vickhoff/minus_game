@@ -14,10 +14,10 @@ class UsersViewModel: ObservableObject {
     @Published var users = [UserModel]()
 
     
-    private var db = Firestore.firestore()
+    private var dbUsers = Firestore.firestore().collection("users")
     
     init() {
-        db.collection("users").order(by: "score", descending: true).addSnapshotListener { (querySnapshot, error) in
+        dbUsers.order(by: "score", descending: true).addSnapshotListener { (querySnapshot, error) in
             guard let documents = querySnapshot?.documents else {
                 print("No documents")
                 return
@@ -44,7 +44,7 @@ class UsersViewModel: ObservableObject {
     }
     
     func givePlus(user: UserModel) {
-        let userRef = db.collection("users").document(user.userID)
+        let userRef = dbUsers.document(user.userID)
         
         //Give Plus
         userRef.updateData([
@@ -71,8 +71,9 @@ class UsersViewModel: ObservableObject {
         }
     }
     
+    //Give Minus
     func giveMinus(user: UserModel) {
-        let userRef = db.collection("users").document(user.userID)
+        let userRef = dbUsers.document(user.userID)
         
         //Give minus
         userRef.updateData([
@@ -95,6 +96,41 @@ class UsersViewModel: ObservableObject {
                 } else {
                     print("Lowest updated")
                 }
+            }
+        }
+    }
+    
+    //Add dymmy user
+    func addUser() {
+        
+        var userRef: DocumentReference? = nil
+        let startingScore: Int = 0
+        userRef = dbUsers.addDocument(data: [
+            "name": "David",
+            "emoji": "🦁",
+            "score": startingScore,
+            "joined": "05/19",
+            "highest": startingScore,
+            "lowest": startingScore,
+            "avgPrWeek": 0.5,
+        ]) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(userRef!.documentID)")
+            }
+        }
+        
+    }
+    
+    //Delete user
+    
+    func deleteUser(user: UserModel) {
+        dbUsers.document(user.userID).delete() { err in
+            if let err = err {
+                print("Error removing document: \(err)")
+            } else {
+                print("Document successfully removed!")
             }
         }
     }
